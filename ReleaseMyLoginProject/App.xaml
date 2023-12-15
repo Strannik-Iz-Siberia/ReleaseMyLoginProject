@@ -1,0 +1,22 @@
+﻿<Application x:Class="ReleaseMyLoginProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ReleaseMyLoginProject"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <RoutedUICommand x:Key="GotoPage" Text="Перейти на страницу"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/TextStyle.xaml"/>
+                <ResourceDictionary Source="Style/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="Style/HomeStyle.xaml"/>
+                <ResourceDictionary Source="Style/IconStyle.xaml"/>
+
+
+                <ResourceDictionary Source="Themes/Light.xaml"/>
+
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

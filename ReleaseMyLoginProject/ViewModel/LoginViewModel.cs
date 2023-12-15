@@ -145,26 +145,33 @@ namespace ReleaseMyLoginProject.ViewModel
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand("INSERT INTO [User] (Username, Password, Name, LastName, Role, Email) VALUES (@Username, @Password, @Name, @LastName, @Role, @Email)", connection);
+                try
                 {
-                    command.Parameters.AddWithValue("@Username", NewUser.Username);
-                    command.Parameters.AddWithValue("@Password", NewUser.Password);
-                    command.Parameters.AddWithValue("@Name", NewUser.Name);
-                    command.Parameters.AddWithValue("@LastName", NewUser.LastName);
-                    command.Parameters.AddWithValue("@Role", "User");  // Устанавливаем значение "User" для поля Role
-                    command.Parameters.AddWithValue("@Email", NewUser.Email);
+                    {
+                        command.Parameters.AddWithValue("@Username", NewUser.Username);
+                        command.Parameters.AddWithValue("@Password", NewUser.Password);
+                        command.Parameters.AddWithValue("@Name", NewUser.Name);
+                        command.Parameters.AddWithValue("@LastName", NewUser.LastName);
+                        command.Parameters.AddWithValue("@Role", "User");  // Устанавливаем значение "User" для поля Role
+                        command.Parameters.AddWithValue("@Email", NewUser.Email);
 
-                    int rowsbd = command.ExecuteNonQuery();
-                    if (rowsbd > 0)
-                    {
-                        MessageBox.Show("Пользователь успешно добавлен в базу данных.");
+                        int rowsbd = command.ExecuteNonQuery();
+                        if (rowsbd > 0)
+                        {
+                            MessageBox.Show("Пользователь успешно добавлен в базу данных.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не удалось добавить пользователя в базу данных.");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Не удалось добавить пользователя в базу данных.");
-                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка!");
                 }
             }
-
         }
 
         private void EditUser()

@@ -59,7 +59,7 @@
         </Style.Resources>
     </Style>
 
-    <ImageBrush x:Key="iconEDITOR" ImageSource="/Images/edit.png"/>
+    <ImageBrush x:Key="iconEDITOR" ImageSource="/Images/edit_dark.png"/>
 
 
 </ResourceDictionary>

@@ -89,5 +89,14 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
         {
 
         }
+
+        private void Addbtn_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMain ad = new AdminMain();
+            ad.Close();
+            AddUser au = new AddUser();
+            au.Show();
+         
+        }
     }
 }

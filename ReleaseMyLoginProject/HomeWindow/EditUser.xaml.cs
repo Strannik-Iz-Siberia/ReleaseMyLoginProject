@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ReleaseMyLoginProject.Pages.PageAdmin
+namespace ReleaseMyLoginProject.HomeWindow
 {
     /// <summary>
-    /// Логика взаимодействия для PageEditUser.xaml
+    /// Логика взаимодействия для EditUser.xaml
     /// </summary>
-    public partial class PageEditUser : Page
+    public partial class EditUser : Window
     {
-        public PageEditUser()
+        public EditUser()
         {
             InitializeComponent();
         }

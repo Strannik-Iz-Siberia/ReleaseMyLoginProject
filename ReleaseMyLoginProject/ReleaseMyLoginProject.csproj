@@ -58,15 +58,15 @@
     <Compile Include="HomeWindow\AdminMain.xaml.cs">
       <DependentUpon>AdminMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HomeWindow\EditUser.xaml.cs">
+      <DependentUpon>EditUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HomeWindow\HomeMain.xaml.cs">
       <DependentUpon>HomeMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Pages\PageAdmin\PageEdit.xaml.cs">
       <DependentUpon>PageEdit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageAdmin\PageEditUser.xaml.cs">
-      <DependentUpon>PageEditUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageHome\CoupSchedulePage.xaml.cs">
       <DependentUpon>CoupSchedulePage.xaml</DependentUpon>
@@ -80,7 +80,6 @@
     <Compile Include="Pages\PageHome\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PagesAdmin.cs" />
     <Compile Include="Pages\PageStyle.cs" />
     <Compile Include="Repositories\RelayCommand.cs" />
     <Compile Include="TestMain\Test.xaml.cs">
@@ -92,6 +91,10 @@
       <DependentUpon>PasswordUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="HomeWindow\AdminMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeWindow\EditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,10 +119,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageAdmin\PageEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageAdmin\PageEditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\settings-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

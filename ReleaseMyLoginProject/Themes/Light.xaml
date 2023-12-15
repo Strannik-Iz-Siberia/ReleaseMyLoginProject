@@ -32,10 +32,10 @@
 
     <SolidColorBrush Color="#424242" x:Key="textbx"></SolidColorBrush>
 
-    <SolidColorBrush x:Key="HomeBackgroundColor" Color="#f9f9f9"/>
+    <SolidColorBrush x:Key="HomeBackgroundColor" Color="#F3F8FF"/>
 
 
-    <SolidColorBrush x:Key="BigHomeBackgroundColor" Color="#f3f3f3"/>
+    <SolidColorBrush x:Key="BigHomeBackgroundColor" Color="#D8D9DA"/>
 
 
 

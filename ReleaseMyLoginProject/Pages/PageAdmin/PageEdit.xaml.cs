@@ -52,6 +52,41 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (BDGrid.SelectedItem != null)
+            {
+                // Получаем выделенную строку
+                DataRowView selectedUser = (DataRowView)BDGrid.SelectedItem;
+
+                // Получаем имя пользователя, которого нужно удалить
+                string userName = selectedUser["Username"].ToString();
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewLog;Integrated Security=True;Encrypt=False"))
+                    {
+                        connection.Open();
+
+                        string query = $"DELETE FROM [User] WHERE Username = '{userName}'";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //  возможные ошибки
+                }
+            }
+            else
+            {
+                //  когда пользователь не выбран для удаления
+            }
+        }
+
+        private void updateBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

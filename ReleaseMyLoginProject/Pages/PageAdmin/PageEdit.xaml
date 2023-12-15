@@ -30,7 +30,6 @@
                 <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Frame x:Name="frame" NavigationUIVisibility="Hidden" Content=""/>
 
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Height="50">
@@ -42,7 +41,7 @@
 
             <Button Content="Забанить пользователя" Margin="20,0,0,0" Height="40" Width="135"/>
 
-            <Button Content="Обновить Базу Данных" Margin="10,0,0,0" Height="40" Width="147" x:Name="updateBtn"/>
+            <Button Content="Обновить Базу Данных" Margin="10,0,0,0" Height="40" Width="147" x:Name="updateBtn" Click="updateBtn_Click"/>
 
         </StackPanel>
     </Grid>

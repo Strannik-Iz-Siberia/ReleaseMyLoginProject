@@ -166,9 +166,34 @@ namespace ReleaseMyLoginProject.ViewModel
 
         }
 
-        private  void EditUser()
+        private void EditUser()
         {
+            App.Current.Windows[0].Close();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand($"UPDATE [User] SET Name = @Name, LastName = @LastName, Password = @Password WHERE Username = @Username", connection);
+                try
+                {
+                    command.Parameters.AddWithValue("@Username", NewUser.Username);
+                    command.Parameters.AddWithValue("@Name", NewUser.Name);
+                    command.Parameters.AddWithValue("@LastName", NewUser.LastName);
 
+                    command.Parameters.AddWithValue("@Password", NewUser.Password);
+
+                    int rowBD = command.ExecuteNonQuery();
+
+                    if (rowBD > 0)
+                    {
+                        MessageBox.Show("Редактирование завершено");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Пользователь не изменён");
+                }
+                connection.Close();
+            }
         }
     }
 }

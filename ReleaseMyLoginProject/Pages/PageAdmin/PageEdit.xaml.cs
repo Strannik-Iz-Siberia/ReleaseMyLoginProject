@@ -40,5 +40,15 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
             BDGrid.ItemsSource = dt.DefaultView;
             connection.Close();
         }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

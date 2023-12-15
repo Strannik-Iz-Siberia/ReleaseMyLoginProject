@@ -65,6 +65,9 @@
     <Compile Include="Pages\PageAdmin\PageEdit.xaml.cs">
       <DependentUpon>PageEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageAdmin\PageEditUser.xaml.cs">
+      <DependentUpon>PageEditUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageHome\CoupSchedulePage.xaml.cs">
       <DependentUpon>CoupSchedulePage.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,8 @@
     <Compile Include="Pages\PageHome\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PagesAdmin.cs" />
+    <Compile Include="Pages\PageStyle.cs" />
     <Compile Include="Repositories\RelayCommand.cs" />
     <Compile Include="TestMain\Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
@@ -111,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageAdmin\PageEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAdmin\PageEditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,7 +184,6 @@
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageStyle.cs" />
     <Compile Include="Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>

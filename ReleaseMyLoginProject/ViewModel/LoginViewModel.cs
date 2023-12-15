@@ -52,6 +52,7 @@ namespace ReleaseMyLoginProject.ViewModel
             LoginCommand = new RelayCommand(Login);
             NewUser = new UserModel();
             AddUserCommand = new RelayCommand(AddUser);
+            EditUserCommand = new RelayCommand(EditUser);
         }
 
         public UserModel NewUser
@@ -97,7 +98,7 @@ namespace ReleaseMyLoginProject.ViewModel
             }
             else
             {
-                MessageBox.Show("Пользователь не обнаружен.");
+                MessageBox.Show("Пользователь не найден.");
             }
         }
 

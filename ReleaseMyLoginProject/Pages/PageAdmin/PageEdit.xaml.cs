@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ReleaseMyLoginProject.HomeWindow;
 
 namespace ReleaseMyLoginProject.Pages.PageAdmin
 {
@@ -41,18 +42,17 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
             connection.Close();
         }
 
-        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        private void EditBtn_Click_1(object sender, RoutedEventArgs e)
         {
-
+            AdminMain ad = new AdminMain();
+            ad.Close();
+            EditUser ed = new EditUser();
+            ed.Show();
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
-        
-
-
-
     }
 }

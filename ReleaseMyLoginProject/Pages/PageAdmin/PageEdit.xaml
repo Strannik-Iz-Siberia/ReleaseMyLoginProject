@@ -11,9 +11,7 @@
     <Page.DataContext>
         <viewmodel:LoginViewModel/>
     </Page.DataContext>
-    <Page.CommandBindings>
-        <CommandBinding Command="{StaticResource GotoPage}" Executed="OnCotoPage"/>
-    </Page.CommandBindings>
+  
 
     <Grid>
 
@@ -37,7 +35,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Height="50">
 
-            <Button Content="Изменить пользователя" Margin="6" Width="148" x:Name="EditBtn" />
+            <Button Content="Изменить пользователя" Margin="6" Width="148" x:Name="EditBtn" Click="EditBtn_Click_1" />
             <Button Content="Добавить пользователя" Margin="10,0,0,0" Height="40" Width="154" x:Name="Addbtn"/>
 
             <Button Content="Удалить пользователеля" Margin="20,0,0,0" Height="40" Width="140" x:Name="DeleteBtn" Click="DeleteBtn_Click"/>

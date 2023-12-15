@@ -30,14 +30,14 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Height="50">
 
-            <Button Content="Изменить пользователя" Margin="6" Width="148" />
-            <Button Content="Добавить пользователя" Margin="10,0,0,0" Height="40" Width="154"/>
+            <Button Content="Изменить пользователя" Margin="6" Width="148" x:Name="EditBtn" />
+            <Button Content="Добавить пользователя" Margin="10,0,0,0" Height="40" Width="154" x:Name="Addbtn"/>
 
-            <Button Content="Удалить пользователеля" Margin="20,0,0,0" Height="40" Width="140"/>
+            <Button Content="Удалить пользователеля" Margin="20,0,0,0" Height="40" Width="140" x:Name="DeleteBtn"/>
 
             <Button Content="Забанить пользователя" Margin="20,0,0,0" Height="40" Width="135"/>
 
-            <Button Content="Обновить Базу Данных" Margin="10,0,0,0" Height="40" Width="147"/>
+            <Button Content="Обновить Базу Данных" Margin="10,0,0,0" Height="40" Width="147" x:Name="updateBtn"/>
 
         </StackPanel>
     </Grid>

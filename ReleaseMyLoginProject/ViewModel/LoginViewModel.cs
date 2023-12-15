@@ -67,6 +67,8 @@ namespace ReleaseMyLoginProject.ViewModel
         public ICommand LoginCommand { get; private set; }
         public ICommand AddUserCommand { get; private set; }
 
+        public ICommand EditUserCommand { get; private set; }
+
         private void Login()
         {
             HomeMain hm = new HomeMain();
@@ -161,6 +163,11 @@ namespace ReleaseMyLoginProject.ViewModel
                     }
                 }
             }
+
+        }
+
+        private  void EditUser()
+        {
 
         }
     }

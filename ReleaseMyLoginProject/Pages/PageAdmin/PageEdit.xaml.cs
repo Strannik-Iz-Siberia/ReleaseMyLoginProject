@@ -87,6 +87,22 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
 
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewLog;Integrated Security=True;Encrypt=False"))
+                {
+                    connection.Open();
+                    string update = "SELECT * FROM [User]";
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(update,connection);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    BDGrid.ItemsSource = dataTable.DefaultView;
+                }
+            }
+            catch 
+            {
+                
+            }
 
         }
 

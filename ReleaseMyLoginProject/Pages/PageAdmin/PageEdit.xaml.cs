@@ -114,5 +114,73 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
             au.Show();
          
         }
+
+        private void BlockedUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (BDGrid.SelectedItem != null)
+            {
+                // Получаем выделенную строку
+                DataRowView selectedUser = (DataRowView)BDGrid.SelectedItem;
+                // Получаем имя пользователя, которого нужно заблокировать
+                string userName = selectedUser["UserName"].ToString();
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection("Data Source=ATX15303;Initial Catalog=NEWLoginDB;Integrated Security=True"))
+                    {
+                        connection.Open();
+                        // Создаем SQL-запрос для обновления статуса блокировки пользователя
+                        string query = $"UPDATE [User] SET Blocked = 'YES' WHERE Username = '{userName}'";
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            // Выполняем запрос
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Обрабатываем возможные ошибки
+                }
+            }
+            else
+            {
+                // Обработка случая, когда пользователь не выбран для блокировки
+            }
+        }
+
+        private void UnlockUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (BDGrid.SelectedItem != null)
+            {
+                // Получаем выделенную строку
+                DataRowView selectedUser = (DataRowView)BDGrid.SelectedItem;
+                // Получаем имя пользователя, которого нужно разблокировать
+                string userName = selectedUser["UserName"].ToString();
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection("Data Source=ATX15303;Initial Catalog=NEWLoginDB;Integrated Security=True"))
+                    {
+                        connection.Open();
+                        // Создаем SQL-запрос для обновления статуса блокировки пользователя
+                        string query = $"UPDATE [User] SET Blocked = 'NO' WHERE Username = '{userName}'";
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            // Выполняем запрос
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Обрабатываем возможные ошибки
+                }
+            }
+            else
+            {
+                // Обработка случая, когда пользователь не выбран для блокировки
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ReleaseMyLoginProject.Pages.PageAdmin"
       xmlns:viewmodel ="clr-namespace:ReleaseMyLoginProject.ViewModel"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="950"
       Title="PageEdit" Loaded="Page_Loaded">
     <Page.DataContext>
         <viewmodel:LoginViewModel/>
@@ -23,7 +23,7 @@
 
         <DataGrid Grid.Row="0" Grid.Column="1" x:Name="BDGrid" AutoGenerateColumns="False" AlternatingRowBackground="Gray" GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" SelectionMode="Single" SelectionUnit="FullRow"  Grid.ColumnSpan="2" Style="{DynamicResource GridStyle}" IsReadOnly="True">
             <DataGrid.Columns>
-
+                <DataGridTextColumn Header="Заблокирован" Binding="{Binding Blocked}" Width="*" />
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*" />
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding  LastName}" Width="*" />
                 <DataGridTextColumn Header="Никнейм" Binding="{Binding Username}" Width="*" />
@@ -39,7 +39,10 @@
 
             <Button Content="Удалить пользователеля" Margin="20,0,0,0" Height="40" Width="140" x:Name="DeleteBtn" Click="DeleteBtn_Click"/>
 
-            <Button Content="Забанить пользователя" Margin="20,0,0,0" Height="40" Width="135"/>
+            <Button Content="Заблокировать" Margin="10,0,0,0" Height="40" Width="135" x:Name="BlockedUser" Click="BlockedUser_Click"/>
+
+            <Button Content="Разблокировать" Margin="10,0,0,0" Height="40" Width="135" x:Name="UnlockUser" Click="UnlockUser_Click"/>
+
 
             <Button Content="Обновить Базу Данных" Margin="10,0,0,0" Height="40" Width="147" x:Name="updateBtn" Click="updateBtn_Click"/>
 

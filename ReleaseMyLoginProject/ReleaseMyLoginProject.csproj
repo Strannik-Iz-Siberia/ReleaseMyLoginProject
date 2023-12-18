@@ -80,9 +80,6 @@
     <Compile Include="Pages\PageHome\InfoStudent.xaml.cs">
       <DependentUpon>InfoStudent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageHome\SettingPage.xaml.cs">
-      <DependentUpon>SettingPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PageStyle.cs" />
     <Compile Include="Repositories\RelayCommand.cs" />
     <Compile Include="TestMain\Test.xaml.cs">
@@ -138,10 +135,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageHome\InfoStudent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageHome\SettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

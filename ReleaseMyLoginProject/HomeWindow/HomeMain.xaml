@@ -61,7 +61,6 @@
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Меню" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdHome_Click"/>
                         <RadioButton x:Name="rdNotes" Content="Расписание" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>
                         <RadioButton x:Name="rdPayment" Content="Информация" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource payment}" Margin="0 5 0 5" Click="rdPayment_Click" Cursor="Hand"/>
-                        <RadioButton x:Name="rdSetting" Content="Настройки" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource sett}" Click="rdSetting_Click"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">
@@ -85,6 +84,14 @@
                     <RowDefinition Height="60"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                    <ComboBox x:Name="SizeComboBox" SelectionChanged="SizeComboBox_SelectionChanged" Width="128" Background="{DynamicResource Background}" Foreground="{DynamicResource textbk}">
+                        <ComboBoxItem Content="1000 на 650"/>
+                        <ComboBoxItem Content="1280 на 1024"/>
+                        <ComboBoxItem Content="1280 на 960"/>
+                        <ComboBoxItem Content="1350 на 1000"/>
+                    </ComboBox>
+                </StackPanel>
 
                 <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft" Width="169">
                     <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>

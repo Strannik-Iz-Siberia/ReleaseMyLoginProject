@@ -88,10 +88,33 @@ namespace ReleaseMyLoginProject.HomeWindow
 
         }
 
-        private void rdSetting_Click(object sender, RoutedEventArgs e)
+        
+        private void SizeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/PageHome/SettingPage.xaml", UriKind.RelativeOrAbsolute));
+            ComboBox cb = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)cb.SelectedItem;
+            string selectedSize = selectedItem.Content.ToString();
 
+            if (selectedSize == "1280 на 1024")
+            {
+                this.Height = 924; // Установка высоты окна
+                this.Width = 1280; // Установка ширины окна
+            }
+            else if (selectedSize == "1280 на 960")
+            {
+                this.Height = 960; // Установка высоты окна
+                this.Width = 1280; // Установка ширины окна
+            }
+            else if (selectedSize == "1350 на 1000")
+            {
+                this.Height = 980; // Установка высоты окна
+                this.Width = 1350; // Установка ширины окна
+            }
+            else if (selectedSize == "1000 на 650")
+            {
+                this.Height = 650; // Установка высоты окна
+                this.Width = 1000; // Установка ширины окна
+            }
         }
     }
 }

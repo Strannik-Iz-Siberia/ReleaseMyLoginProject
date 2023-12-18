@@ -33,10 +33,6 @@ namespace ReleaseMyLoginProject.ViewModel
             }
         }
 
-       
-
-  
-
         public string Password
         {
             get { return password; }
@@ -75,30 +71,65 @@ namespace ReleaseMyLoginProject.ViewModel
             HomeMain hm = new HomeMain();
             AdminMain adminMain = new AdminMain();
             MainWindow mainWindow = new MainWindow();
-
             mainWindow.Close();
+
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
                 MessageBox.Show("Не введены данные!");
                 return;
             }
 
-            if (IsUserCheck(Username, Password, "Admin"))
-            {
-                App.Current.Windows[0].Close();
-                adminMain.Show();
-                mainWindow.Close();
-            }
-            else if (IsUserCheck(Username, Password, "User"))
-            {
-                App.Current.Windows[0].Close();
-                hm.Show();
-                mainWindow.Close();
+            bool userExists = IsUserCheck(Username, Password, "Admin") || IsUserCheck(Username, Password, "User");
 
+            if (userExists)
+            {
+                // Получаем статус блокировки пользователя
+                bool isBlocked = IsUserBlocked(Username);
+
+                if (isBlocked)
+                {
+                    MessageBox.Show("Пользователь заблокирован!");
+                    return;
+                }
+
+                // В зависимости от роли пользователя открываем соответствующее окно
+                if (IsUserCheck(Username, Password, "Admin"))
+                {
+                    App.Current.Windows[0].Close();
+                    adminMain.Show();
+                    mainWindow.Close();
+                }
+                else
+                {
+                    App.Current.Windows[0].Close();
+                    hm.Show();
+                    mainWindow.Close();
+                }
             }
             else
             {
-                MessageBox.Show("Пользователь не найден.");
+                MessageBox.Show("Пользователь не обнаружен.");
+            }
+        }
+
+        private bool IsUserBlocked(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("SELECT Blocked FROM [User] WHERE Username = @Username", connection);
+                    command.Parameters.AddWithValue("@Username", username);
+
+                    string blockedStatus = (string)command.ExecuteScalar();
+                    return blockedStatus == "YES";
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ошибка при выполнении запроса: " + ex.Message);
+                    return false;
+                }
             }
         }
 
@@ -144,34 +175,28 @@ namespace ReleaseMyLoginProject.ViewModel
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO [User] (Username, Password, Name, LastName, Role, Email) VALUES (@Username, @Password, @Name, @LastName, @Role, @Email)", connection);
-                try
+                SqlCommand command = new SqlCommand("INSERT INTO [User] (Username, Password, Name, LastName, Role, Email, Blocked) VALUES (@Username, @Password, @Name, @LastName, @Role, @Email, @Blocked)", connection);
                 {
+                    command.Parameters.AddWithValue("@Username", NewUser.Username);
+                    command.Parameters.AddWithValue("@Password", NewUser.Password);
+                    command.Parameters.AddWithValue("@Name", NewUser.Name);
+                    command.Parameters.AddWithValue("@LastName", NewUser.LastName);
+                    command.Parameters.AddWithValue("@Role", "User");  // Устанавливаем значение "User" для поля Role
+                    command.Parameters.AddWithValue("@Email", NewUser.Email);
+                    command.Parameters.AddWithValue("@Blocked", "NO");
+
+                    int rowsbd = command.ExecuteNonQuery();
+                    if (rowsbd > 0)
                     {
-                        command.Parameters.AddWithValue("@Username", NewUser.Username);
-                        command.Parameters.AddWithValue("@Password", NewUser.Password);
-                        command.Parameters.AddWithValue("@Name", NewUser.Name);
-                        command.Parameters.AddWithValue("@LastName", NewUser.LastName);
-                        command.Parameters.AddWithValue("@Role", "User");  // Устанавливаем значение "User" для поля Role
-                        command.Parameters.AddWithValue("@Email", NewUser.Email);
-
-                        int rowsbd = command.ExecuteNonQuery();
-                        if (rowsbd > 0)
-                        {
-                            MessageBox.Show("Пользователь успешно добавлен в базу данных.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Не удалось добавить пользователя в базу данных.");
-                        }
+                        MessageBox.Show("Пользователь успешно добавлен в базу данных.");
                     }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка!");
+                    else
+                    {
+                        MessageBox.Show("Не удалось добавить пользователя в базу данных.");
+                    }
                 }
             }
+
         }
 
         private void EditUser()

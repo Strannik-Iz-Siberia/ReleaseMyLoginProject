@@ -72,6 +72,11 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
                         {
                             command.ExecuteNonQuery();
                         }
+                        string update = "SELECT * FROM [User]";
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(update, connection);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+                        BDGrid.ItemsSource = dataTable.DefaultView;
                     }
                 }
                 catch (Exception ex)
@@ -136,6 +141,11 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
                             // Выполняем запрос
                             command.ExecuteNonQuery();
                         }
+                        string update = "SELECT * FROM [User]";
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(update, connection);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+                        BDGrid.ItemsSource = dataTable.DefaultView;
                     }
                 }
                 catch (Exception ex)
@@ -170,6 +180,11 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
                             // Выполняем запрос
                             command.ExecuteNonQuery();
                         }
+                        string update = "SELECT * FROM [User]";
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(update, connection);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+                        BDGrid.ItemsSource = dataTable.DefaultView;
                     }
                 }
                 catch (Exception ex)

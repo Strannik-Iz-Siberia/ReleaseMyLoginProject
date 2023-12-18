@@ -30,7 +30,7 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewLog;Integrated Security=True;Encrypt=False");
+            SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewVariantLogDB;Integrated Security=True;Encrypt=False");
             connection.Open();
             string cmd = "SELECT * FROM [User]";
             SqlCommand createCommand = new SqlCommand(cmd, connection);

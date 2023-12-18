@@ -19,7 +19,7 @@ namespace ReleaseMyLoginProject.ViewModel
     {
         private string username;
         private UserModel newUser;
-        private string connectionString = "Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewLog;Integrated Security=True;Encrypt=False";
+        private string connectionString = "Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewVariantLogDB;Integrated Security=True;Encrypt=False";
         private string password;
 
 

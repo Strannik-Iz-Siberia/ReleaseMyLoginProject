@@ -12,3 +12,8 @@ https://github.com/Strannik-Iz-Siberia/ReleaseMyLoginProject/assets/153880086/32
 Вход в приложение пользователем.
 
 https://github.com/Strannik-Iz-Siberia/ReleaseMyLoginProject/assets/153880086/7544095f-0b69-4340-a17a-6276d5c75e6b
+
+Вход в приложением админом. 
+Добавление нового пользователя и изменение данных пользователя.
+
+https://github.com/Strannik-Iz-Siberia/ReleaseMyLoginProject/assets/153880086/5c627db6-0728-4673-b963-f404950cd1c5

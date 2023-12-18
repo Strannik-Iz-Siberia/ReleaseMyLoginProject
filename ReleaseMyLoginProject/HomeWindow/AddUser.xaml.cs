@@ -26,8 +26,7 @@ namespace ReleaseMyLoginProject.HomeWindow
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
         {
-            AdminMain ad = new AdminMain();
-            ad.Show();
+           
             this.Close();
         }
         private void textUser_MouseDown(object sender, MouseButtonEventArgs e)

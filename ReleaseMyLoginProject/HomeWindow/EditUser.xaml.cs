@@ -92,8 +92,7 @@ namespace ReleaseMyLoginProject.HomeWindow
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            AdminMain ad = new AdminMain();
-            ad.Show();
+           ;
             this.Close();
         }
     }

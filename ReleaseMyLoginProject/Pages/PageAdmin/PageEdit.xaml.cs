@@ -62,7 +62,7 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
 
                 try
                 {
-                    using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewLog;Integrated Security=True;Encrypt=False"))
+                    using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewVariantLogDB;Integrated Security=True;Encrypt=False"))
                     {
                         connection.Open();
 
@@ -89,7 +89,7 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewLog;Integrated Security=True;Encrypt=False"))
+                using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewVariantLogDB;Integrated Security=True;Encrypt=False"))
                 {
                     connection.Open();
                     string update = "SELECT * FROM [User]";
@@ -126,7 +126,7 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
 
                 try
                 {
-                    using (SqlConnection connection = new SqlConnection("Data Source=ATX15303;Initial Catalog=NEWLoginDB;Integrated Security=True"))
+                    using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewVariantLogDB;Integrated Security=True;Encrypt=False"))
                     {
                         connection.Open();
                         // Создаем SQL-запрос для обновления статуса блокировки пользователя
@@ -160,7 +160,7 @@ namespace ReleaseMyLoginProject.Pages.PageAdmin
 
                 try
                 {
-                    using (SqlConnection connection = new SqlConnection("Data Source=ATX15303;Initial Catalog=NEWLoginDB;Integrated Security=True"))
+                    using (SqlConnection connection = new SqlConnection("Data Source=dbs.mssql.app.biik.ru;Initial Catalog=NewVariantLogDB;Integrated Security=True;Encrypt=False"))
                     {
                         connection.Open();
                         // Создаем SQL-запрос для обновления статуса блокировки пользователя

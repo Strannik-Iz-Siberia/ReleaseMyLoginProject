@@ -17,3 +17,8 @@ https://github.com/Strannik-Iz-Siberia/ReleaseMyLoginProject/assets/153880086/75
 Добавление нового пользователя и изменение данных пользователя.
 
 https://github.com/Strannik-Iz-Siberia/ReleaseMyLoginProject/assets/153880086/5c627db6-0728-4673-b963-f404950cd1c5
+
+
+Удаление пользователя. Блокировка пользователя. Разблокирование пользователя.
+
+https://github.com/Strannik-Iz-Siberia/ReleaseMyLoginProject/assets/153880086/caf1b467-b077-4539-91b4-acb40da7815c
